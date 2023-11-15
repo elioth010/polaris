@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 
 import 'theme/color_schemes.g.dart';
@@ -12,7 +13,7 @@ void main() => runApp(const EspressoLauncher());
 class EspressoLauncher extends StatelessWidget {
   const EspressoLauncher({Key? key}) : super(key: key);
 
-   // This widget is the root of your application.
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return DynamicColorBuilder(
@@ -763,7 +764,7 @@ class _HomeCoffeeWidgetState extends State<HomeCoffeeWidget> {
                         Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16, 0, 16, 16),
-                            child: ElevatedButton(
+                            child: ElevatedButton.icon(
                               onPressed: () async {
                                 /*Navigator.of(context).push(
                     PageTransition(
@@ -773,32 +774,34 @@ class _HomeCoffeeWidgetState extends State<HomeCoffeeWidget> {
                   );*/
                               },
                               style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all<Color>(const Color(0x00507583)), // Set the desired background color
-                                minimumSize: MaterialStateProperty.all<Size>(const Size(double.infinity, 50)),
+                                backgroundColor: MaterialStateProperty
+                                    .all<Color>(const Color.fromARGB(
+                                        255,
+                                        80,
+                                        117,
+                                        131)), // Set the desired background color
+                                minimumSize: MaterialStateProperty.all<Size>(
+                                    const Size(double.infinity, 50)),
                                 elevation: MaterialStateProperty.all<double>(3),
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
                               ),
-                              child: const Row(
-                                children: [
-                                  Icon(
-                                    Icons.coffee_maker,
-                                    size: 15,
-                                  ),
-                                  SizedBox(
-                                      width:
-                                          8), // Add space between icon and text
-                                  Text(
-                                    "Brew Now",
-                                    style: TextStyle(
-                                      fontFamily: 'Inter',
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
+                              icon: const Icon(
+                                Icons.coffee_maker,
+                                size: 15,
+                                color: Colors.white,
+                              ),
+                              // Add space between icon and text
+                              label: const Text(
+                                "Brew Now",
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  color: Colors.white,
+                                ),
                               ),
                             )),
                       ]),
